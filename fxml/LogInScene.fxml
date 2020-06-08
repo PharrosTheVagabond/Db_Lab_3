@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="150.0" prefWidth="220.0" spacing="5.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="urlField" onMouseClicked="#clearLabel" promptText="URL" />
+      <TextField fx:id="loginField" onMouseClicked="#clearLabel" promptText="Login" />
+      <PasswordField fx:id="passwordField" onMouseClicked="#clearLabel" promptText="Password" />
+      <Button fx:id="logInButton" mnemonicParsing="false" onMouseClicked="#logInButtonPressed" text="Log in" />
+      <Label fx:id="infoLabel" />
+   </children>
+   <padding>
+      <Insets left="2.0" />
+   </padding>
+</VBox>

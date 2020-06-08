@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+       <HBox spacing="5.0" BorderPane.alignment="CENTER">
+           <BorderPane.margin>
+               <Insets top="5.0" />
+           </BorderPane.margin>
+           <VBox spacing="5.0">
+               <Label text="Decks" />
+               <TextField fx:id="decksNameAddField" prefWidth="60.0" promptText="Name" />
+               <TextField fx:id="decksAuthorAddField" prefWidth="60.0" promptText="Author" />
+               <TextField fx:id="decksClassIdAddField" prefWidth="50.0" promptText="Class id" />
+               <TextField fx:id="decksCostAddField" prefWidth="40.0" promptText="Cost" />
+               <TextField fx:id="decksGamesTotalAddField" prefWidth="80.0" promptText="Games total" />
+               <TextField fx:id="decksGamesWonAddField" prefWidth="80.0" promptText="Games won" />
+               <Button mnemonicParsing="false" onMouseClicked="#insertDeck" text="Add" />
+               <Button mnemonicParsing="false" onMouseClicked="#clearDecks" prefWidth="80.0" text="CLEAR table" wrapText="true" />
+            <padding>
+                <Insets left="5.0" />
+            </padding>
+           </VBox>
+           <VBox spacing="5.0">
+               <HBox spacing="5.0">
+                   <TextField fx:id="decksNameSearchField" prefWidth="100.0" promptText="Name" />
+                   <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseClicked="#getDecksByName" text="Search" />
+                   <Button mnemonicParsing="false" onMouseClicked="#deleteDecksByName" text="Delete" />
+               </HBox>
+               <TableView fx:id="decksTable" editable="true" prefHeight="99999.0">
+                   <columns>
+                       <TableColumn fx:id="decksIdColumn" editable="false" prefWidth="30.0" text="id" />
+                       <TableColumn fx:id="decksNameColumn" text="Name" />
+                       <TableColumn fx:id="decksAuthorColumn" text="Author" />
+                       <TableColumn fx:id="decksClassIdColumn" prefWidth="50.0" text="Class id" />
+                       <TableColumn fx:id="decksCostColumn" prefWidth="40.0" text="Cost" />
+                       <TableColumn fx:id="decksGamesTotalColumn" prefWidth="72.0" text="Games total" />
+                       <TableColumn fx:id="decksGamesWonColumn" prefWidth="70.0" text="Games won" />
+                       <TableColumn fx:id="decksWinrateColumn" editable="false" prefWidth="50.0" text="Winrate" />
+                       <TableColumn fx:id="decksDeleteColumn" prefWidth="30.0" resizable="false" sortable="false" />
+                   </columns>
+               </TableView>
+           </VBox>
+       </HBox>
+   </left>
+   <bottom>
+       <VBox spacing="5.0" BorderPane.alignment="CENTER">
+           <HBox spacing="5.0">
+               <Button mnemonicParsing="false" onMouseClicked="#showAll" text="Load data" />
+           </HBox>
+           <Label fx:id="errorLabel" onMouseClicked="#hideErrorMessage" />
+       </VBox>
+   </bottom>
+   <right>
+        <VBox spacing="5.0" BorderPane.alignment="CENTER">
+            <Label text="Classes" />
+            <HBox spacing="5.0">
+                <TextField fx:id="classesNameAddField" prefWidth="100.0" promptText="Class name" />
+                <Button mnemonicParsing="false" onMouseClicked="#insertClass" text="Add" />
+            <Button mnemonicParsing="false" onMouseClicked="#clearClasses" text="CLEAR table" />
+            </HBox>
+            <TableView fx:id="classesTable" editable="true" prefHeight="99999.0">
+                <columns>
+                    <TableColumn fx:id="classesIdColumn" editable="false" prefWidth="20.0" text="id" />
+                    <TableColumn fx:id="classesNameColumn" prefWidth="85.0" text="Class name" />
+                    <TableColumn fx:id="classesGamesColumn" editable="false" prefWidth="50.0" text="Games" />
+                    <TableColumn fx:id="classesWinrateColumn" editable="false" prefWidth="50.0" text="Winrate" />
+                    <TableColumn fx:id="classesDeleteColumn" editable="false" prefWidth="30.0" resizable="false" sortable="false" />
+                </columns>
+            </TableView>
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+        </VBox>
+   </right>
+</BorderPane>
